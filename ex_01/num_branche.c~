@@ -1,0 +1,5 @@
+int	num_branche(int size)
+{
+  nbre = size;
+  return (size);
+}

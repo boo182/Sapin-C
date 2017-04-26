@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int	nbre_line_total(int size)
+{
+  int a = size + 3;
+  int temp = a;
+  int b = temp + 1;
+  int c = size + 1;
+  while(c--> 0)
+    {
+      temp = a + b;
+    }
+
+  return(temp);
+  
+}
+int	main()
+{
+  printf("%d\n", nbre_line_total(8));
+  return 0;
+}

@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "sapin.h"
+#define BASE 3
+
+
+  void	affich(int i, int j, int k, int size)
+{
+  int decal;
+  decal = 4;
+  while(i < size)
+    {
+      while(j < (size-k)+i)
+	{ 
+	  while(k < ((size-1)-i))
+	    {
+	      putchar(' ');
+	      k++;
+	    }
+	  putchar('*');
+	  j++;
+	}
+      putchar('\n');
+      j = 0;
+      k = 0;
+      i++;
+    }
+}  
+
+void	sapin(int size)
+{
+  int i;
+  int j;
+  int k;
+  int l;
+  int r;
+  r = 0;
+  i = 0;
+  j = 0;
+  k = 0;
+  l = 0;
+  int last_line;
+  while(r < size)
+    {
+      last_line = BASE + size + i;
+      affich(i, j, k, size);
+      r++;
+    }
+  
+}
+
+
+int	main(int argc, char *argv[])
+{
+  int sap;
+  sap = atoi(argv[1]);
+  affich(sap);
+  sapin(sap);
+  putchar('\n');
+  tronc_affich(sap);
+  // printf("resultat final %d\n", good_size(sap));
+   // printf("%d\n", branche_first_line(sap));
+  return 0;
+}

@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "sapin.h"
+#define BASE
+
+void	 trapeze(int size, int f)
+{
+  int j;
+  int i;
+  int k;
+  i = 3;
+  j = 0;
+  int g = branche_first_line(size);
+  int li = size + 3;
+  int l;
+  l = 1;
+  k = 0;
+  int h;
+  h = 0;
+  while (j < li)
+    {
+      while(k < (f - (g+(j*2))) / 2 )
+	{ 
+	  putchar('0');
+	  k++;	  
+	}
+      i = 0;
+      while(i < g + (j*2))
+	{
+	  putchar('*');
+	  i++;  
+	}
+      
+  putchar('\n');
+  j++;
+  k = 0;
+    }
+}
+
+
+void	sapin(int size)
+{
+  int i;
+  i = 1;
+  int j;
+  j = 0;
+  int last;
+  int offset;
+  offset = 1;
+  last = branche_last_line(size);
+   while(i <= size)
+      {
+	trapeze(i, last);
+	i++;
+      }
+tronc_affich(size);
+}
+
+
+
+
+int main(int argc, char *argv[])
+{
+  int sap;
+  sap = atoi(argv[1]);
+  sapin(sap);
+  return 0;
+}

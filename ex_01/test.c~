@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "sapin.h"
+
+void	 trapeze(int size)
+{
+  int j;
+  int i;
+  i = 0;
+  j = 0;
+  while(j < size+6)
+    {
+      i = 0;
+      while(i < (size/2)-j)
+	{
+	  putchar('0');
+	  i++;
+	}
+      while(i<((size/2)+1)+j)
+	{
+	  putchar('*');
+	  i++;
+	}
+      putchar('\n');
+      j++;
+    }
+  
+}
+
+
+
+
+
+
+
+int main()
+{
+  trapeze(1);
+  return 0;
+}
